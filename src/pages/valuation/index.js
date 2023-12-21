@@ -228,14 +228,14 @@ const index = () => {
           </div>
           <div className="flex justify-center mt-[30px]">
             <button className="w-[215px] h-[47px] rounded-[12px] bg-primary text-white text-xl font-extrabold leading-[30px] tracking-[0.2px]">
-              Get Performance
+              Get Valuation
             </button>
           </div>
         </div>
 
         <div className="mt-[55px] grid grid-cols-2 gap-[63px]">
           <div className="grid grid-cols-2 gap-[43px]">
-            <div className="border-[4px] border-[#51C5B0] rounded-[16px] min-h-[178px] px-[23px] py-[17px]">
+            <div className="border-[4px] border-[#51C5B0] rounded-[16px] min-h-[180px] max-h-[180px] px-[23px] py-[17px]">
               <div className="flex justify-between items-center ">
                 <div className="flex flex-col gap-1">
                   <span className="text-[#A0AEC0] text-xs font-medium leading-[18px] tracking-[0.4px]">
@@ -247,7 +247,7 @@ const index = () => {
                 </div>
                 {iFO2}
               </div>
-              <ResponsiveContainer height={170} className="w-full mt-[23px]">
+              <ResponsiveContainer height={71} className="w-full mt-[23px]">
                 <BarChart
                   width={150}
                   height={40}
@@ -265,7 +265,7 @@ const index = () => {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="border-[4px] border-[#51C5B0] rounded-[16px] min-h-[178px] px-[23px] py-[17px]">
+            <div className="border-[4px] border-[#51C5B0] rounded-[16px] min-h-[180px] max-h-[180px] px-[23px] py-[17px]">
               <div className="flex justify-between items-center ">
                 <div className="flex flex-col gap-1">
                   <span className="text-[#A0AEC0] text-xs font-medium leading-[18px] tracking-[0.4px]">
@@ -277,7 +277,7 @@ const index = () => {
                 </div>
                 {iFO2}
               </div>
-              <ResponsiveContainer height={170} className="w-full mt-[23px]">
+              <ResponsiveContainer height={71} className="w-full mt-[23px]">
                 <BarChart
                   width={150}
                   height={40}
@@ -295,7 +295,7 @@ const index = () => {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="border-[4px] border-[#51C5B0] rounded-[16px] min-h-[178px] px-[23px] py-[17px]">
+            <div className="border-[4px] border-[#51C5B0] rounded-[16px] min-h-[180px] max-h-[180px] px-[23px] py-[17px]">
               <div className="flex justify-between items-center ">
                 <div className="flex flex-col gap-1">
                   <span className="text-[#A0AEC0] text-xs font-medium leading-[18px] tracking-[0.4px]">
@@ -307,7 +307,7 @@ const index = () => {
                 </div>
                 {iFO2}
               </div>
-              <ResponsiveContainer height={170} className="w-full mt-[23px]">
+              <ResponsiveContainer height={71} className="w-full mt-[23px]">
                 <BarChart
                   width={150}
                   height={40}
@@ -325,7 +325,7 @@ const index = () => {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="border-[4px] border-[#51C5B0] rounded-[16px] min-h-[178px] px-[23px] py-[17px]">
+            <div className="border-[4px] border-[#51C5B0] rounded-[16px] min-h-[180px] max-h-[180px] px-[23px] py-[17px]">
               <div className="flex justify-between items-center ">
                 <div className="flex flex-col gap-1">
                   <span className="text-[#A0AEC0] text-xs font-medium leading-[18px] tracking-[0.4px]">
@@ -337,7 +337,7 @@ const index = () => {
                 </div>
                 {iFO2}
               </div>
-              <ResponsiveContainer height={170} className="w-full mt-[23px]">
+              <ResponsiveContainer height={71} className="w-full mt-[23px]">
                 <BarChart
                   width={150}
                   height={40}
@@ -357,10 +357,10 @@ const index = () => {
             </div>
           </div>
           <div
-            className="min-w-[317px] h-full bg-[#1A202C] border border-[#2A313C] rounded-[16px] pt-[49px] pb-[5px] px-[17px]
-        grid grid-cols-1 gap-6"
+            className="min-w-[317px] max-h-[406px] h-full bg-[#1A202C] border-[3px] border-[#8AEB68] rounded-[16px] pt-[40px] pb-[5px] px-[17px]
+        "
           >
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center mb-[20px]">
               <h1 className="text-primary_gw text-[18px] font-extrabold leading-[24px] tracking-[0.2px]">
                 Comparables by Industry
               </h1>
@@ -368,32 +368,34 @@ const index = () => {
                 View all
               </span>
             </div>
-            <ScrollArea className="h-full max-h-[380px]">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 5, 6, 4, 5, 5, 5, 5, 5].map(() => (
-                <>
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-3">
-                      <div> {iFOLogo1}</div>
-                      <div className="flex flex-col gap-1">
+            <ScrollArea className="h-full max-h-[290px] ">
+              <div className="grid grid-cols-1 gap-[24px]">
+                {[1, 2, 3, 4, 5, 6, 7, 8, 5, 6, 4, 5, 5, 5, 5, 5].map(() => (
+                  <>
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-3">
+                        <div> {iFOLogo1}</div>
+                        <div className="flex flex-col gap-1">
+                          <h1 className="text-primary_gw text-sm font-extrabold leading-[21px] tracking-[0.2px]">
+                            Name 1
+                          </h1>
+                          <span className="text-[#A0AEC0] text-xs font-medium leading-[18px] tracking-[0.4px]">
+                            Deposit
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-1 text-right">
                         <h1 className="text-primary_gw text-sm font-extrabold leading-[21px] tracking-[0.2px]">
-                          Name 1
+                          +523.10
                         </h1>
                         <span className="text-[#A0AEC0] text-xs font-medium leading-[18px] tracking-[0.4px]">
-                          Deposit
+                          Today at 7.18 AM
                         </span>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-1 text-right">
-                      <h1 className="text-primary_gw text-sm font-extrabold leading-[21px] tracking-[0.2px]">
-                        +523.10
-                      </h1>
-                      <span className="text-[#A0AEC0] text-xs font-medium leading-[18px] tracking-[0.4px]">
-                        Today at 7.18 AM
-                      </span>
-                    </div>
-                  </div>
-                </>
-              ))}
+                  </>
+                ))}
+              </div>
             </ScrollArea>
           </div>
         </div>

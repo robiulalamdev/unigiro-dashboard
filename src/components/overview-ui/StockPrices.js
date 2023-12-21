@@ -67,7 +67,7 @@ const StockPrices = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <ResponsiveContainer width="100%" height="100%" className="mt-[48px]">
+        <ResponsiveContainer height={380} className="w-full mt-[48px]">
           <LineChart className="h-full w-full" data={overview_stock_prices}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" padding={{ left: 30, right: 30 }} />

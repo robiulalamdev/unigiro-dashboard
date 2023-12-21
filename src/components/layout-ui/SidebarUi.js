@@ -37,7 +37,7 @@ const SidebarUi = () => {
         ))}
       </div>
 
-      <div className="h-[165px] w-full rounded-[16px] bg-primary  mt-[133px] px-5 py-1.5 flex flex-col items-center gap-5">
+      <div className="h-[165px] w-full rounded-[16px] bg-gradient-to-b from-[#313183e6] via-primary to-primary mt-[133px] px-5 py-1.5 flex flex-col items-center gap-5">
         <h1 className="text-center text-white font-inter text-2xl tracking-[0.12px] font-semibold">
           Upgrade to Premium
         </h1>
