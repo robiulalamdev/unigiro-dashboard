@@ -1,8 +1,12 @@
 import SelectTimePeriod from "@/components/common-ui/SelectTimePeriod";
-import ForexChart from "@/components/forex-ui/ForexChart";
 import Header from "@/components/headers/Header";
 import OverviewEC from "@/components/overview-ui/OverviewEC";
+import dynamic from "next/dynamic";
 import React from "react";
+
+const ForexChart = dynamic(() => import("@/components/forex-ui/ForexChart"), {
+  ssr: false,
+});
 
 const ForexPage = () => {
   return (

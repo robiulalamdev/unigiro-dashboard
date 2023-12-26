@@ -1,6 +1,5 @@
 import Header from "@/components/headers/Header";
 import OverviewEC from "@/components/overview-ui/OverviewEC";
-import PerformanceChart from "@/components/performance-ui/PerformanceChart";
 import PerformanceTable from "@/components/performance-ui/PerformanceTable";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -10,7 +9,15 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { iDownArrow } from "@/utils/icons";
+import dynamic from "next/dynamic";
 import React from "react";
+
+const PerformanceChart = dynamic(
+  () => import("@/components/performance-ui/PerformanceChart"),
+  {
+    ssr: false,
+  }
+);
 
 const OverViewPage = () => {
   return (
