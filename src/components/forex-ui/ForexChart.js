@@ -260,11 +260,9 @@ var options = {
     height: 350,
     type: "candlestick",
   },
-
   tooltip: {
     enabled: true,
   },
-
   yaxis: {
     tooltip: {
       enabled: true,
