@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollArea } from "../ui/scroll-area";
+import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 import {
   Table,
@@ -20,36 +20,42 @@ const ValuationTable = () => {
         <TableHeader>
           <TableRow className="border-[#2A313C] hover:bg-main_bg cursor-pointer">
             <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="flex items-center gap-1">
+              <div className="text-xs flex items-center gap-1">
                 Name/Business {iCompare}
               </div>
             </TableHead>
             <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="flex items-center gap-1">EV/Sales {iCompare}</div>
+              <div className="text-xs flex items-center gap-1">
+                EV/Sales {iCompare}
+              </div>
             </TableHead>
             <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="flex items-center gap-1">
+              <div className="text-xs flex items-center gap-1">
                 EV/EBITDA {iCompare}
               </div>
             </TableHead>
             <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="flex items-center gap-1">EV/EBIT {iCompare}</div>
+              <div className="text-xs flex items-center gap-1">
+                EV/EBIT {iCompare}
+              </div>
             </TableHead>
             <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="flex items-center gap-1">P/Sales {iCompare}</div>
+              <div className="text-xs flex items-center gap-1">
+                P/Sales {iCompare}
+              </div>
             </TableHead>
             <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="flex items-center gap-1">
+              <div className="text-xs flex items-center gap-1">
                 P/Earnings {iCompare}
               </div>
             </TableHead>
             <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="flex items-center gap-1">
+              <div className="text-xs flex items-center gap-1">
                 P/BookValue {iCompare}
               </div>
             </TableHead>
             <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="flex items-center gap-1">Actions</div>
+              <div className="text-xs flex items-center gap-1">Actions</div>
             </TableHead>
           </TableRow>
         </TableHeader>
@@ -315,6 +321,7 @@ const ValuationTable = () => {
           </TableRow>
         </TableBody>
       </Table>
+      <ScrollBar orientation="horizontal" />
     </ScrollArea>
   );
 };

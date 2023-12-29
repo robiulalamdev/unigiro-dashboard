@@ -16,9 +16,9 @@ import { Line, LineChart, ResponsiveContainer } from "recharts";
 
 const PerformanceChart = () => {
   return (
-    <div className="flex justify-between w-full gap-[53px] mt-[45px]">
-      <div className="min-w-[330px] h-full">
-        <div className="w-full h-[180px] border-[3px] border-[#4FE270] rounded-[16px] py-3 px-[25px]">
+    <div className="flex flex-col md:flex-row justify-between w-full gap-[53px] mt-[45px]">
+      <div className="w-full md:min-w-[330px] h-full">
+        <div className="w-full h-[180px] border-[3px] border-[#4FE270] rounded-[16px] py-3 px-2 md:px-[25px]">
           <div className="flex justify-between items-start">
             <div className="flex flex-col justify-center items-center gap-[23px]">
               <h1 className="font-inter text-primary_gw text-xl font-semibold leading-[28px] tracking-[0.1px]">
@@ -62,7 +62,7 @@ const PerformanceChart = () => {
             </div>
           </div>
         </div>
-        <div className="w-full h-[180px] border-[3px] border-[#4FE270] rounded-[16px] py-3 px-[25px] mt-[10px]">
+        <div className="w-full h-[180px] border-[3px] border-[#4FE270] rounded-[16px] py-3 px-2 md:px-[25px] mt-[10px]">
           <div className="flex justify-between items-start">
             <div className="flex flex-col justify-center items-center gap-[23px]">
               <h1 className="font-inter text-primary_gw text-xl font-semibold leading-[28px] tracking-[0.1px]">
@@ -107,7 +107,7 @@ const PerformanceChart = () => {
         </div>
       </div>
 
-      <div className="w-[280px] flex flex-col items-center gap-2 h-[370px] border-[3px] border-[#47E2BD] performance_avarage_bg rounded-[16px] py-3 px-[25px]">
+      <div className="w-full md:w-[280px] flex flex-col items-center gap-2 h-[370px] border-[3px] border-[#47E2BD] performance_avarage_bg rounded-[16px] py-3 px-2 md:px-[25px]">
         <CircularProgressbar
           value={50}
           text={`${50}%`}
@@ -173,7 +173,7 @@ const PerformanceChart = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col flex-grow items-center gap-2 h-[370px] border-[3px] border-[#47E2BD] performance_avarage_bg rounded-[16px] py-3 px-[25px]">
+      <div className="w-full flex flex-col flex-grow items-center gap-2 h-[370px] border-[3px] border-[#47E2BD] performance_avarage_bg rounded-[16px] py-3 px-3 md:px-[25px]">
         <ResponsiveContainer height={250} className="w-full mt-4">
           <LineChart className="h-full w-full" data={overview_stock_prices}>
             <Line

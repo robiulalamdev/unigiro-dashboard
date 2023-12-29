@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollArea } from "../ui/scroll-area";
+import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 import {
   Table,
@@ -19,21 +19,21 @@ const IndicatorsTable = () => {
       <Table>
         <TableHeader>
           <TableRow className="border-[#2A313C] hover:bg-main_bg cursor-pointer">
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               <div className="flex items-center gap-1">
                 Indicators {iCompare}
               </div>
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               Company 1
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               Company 2
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               Company 3
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               Company 4
             </TableHead>
           </TableRow>
@@ -419,6 +419,7 @@ const IndicatorsTable = () => {
           </TableRow>
         </TableBody>
       </Table>
+      <ScrollBar orientation="horizontal" />
     </ScrollArea>
   );
 };

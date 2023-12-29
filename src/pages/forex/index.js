@@ -12,9 +12,9 @@ const ForexPage = () => {
   return (
     <div>
       <Header label="Indicators" />
-      <main className="mt-[39px]">
+      <main className="mt-5 md:mt-[39px]">
         <OverviewEC />
-        <div className="mt-[102px]">
+        <div className="mt-10 md:mt-[102px]">
           <SelectTimePeriod />
         </div>
         <ForexChart />

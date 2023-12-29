@@ -3,7 +3,7 @@ import React from "react";
 
 const OverviewEC = () => {
   return (
-    <div className="grid grid-cols-2 gap-[22px]">
+    <div className="grid md:grid-cols-2 gap-[12px] md:gap-[22px]">
       <div className="bg-[#1A202C] h-[101px] rounded-[16px] border border-[#2A323C] pb-[28px]">
         <h1 className="text-center text-[#FAFAFA] text-[18px] font-extrabold leading-[24px] tracking-[0.2px] mb-1">
           Exchange:

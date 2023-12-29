@@ -1,16 +1,5 @@
 import React from "react";
 import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Cell,
-  Legend,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioItem,
@@ -18,7 +7,6 @@ import {
 } from "../ui/dropdown-menu";
 import { iDownArrow } from "@/utils/icons";
 import ReactApexChart from "react-apexcharts";
-import moment from "moment";
 
 var options = {
   series: [
@@ -276,14 +264,7 @@ var options = {
   tooltip: {
     enabled: true,
   },
-  // xaxis: {
-  //   type: "category",
-  //   labels: {
-  //     formatter: function (val) {
-  //       return moment(val).format("MMM DD HH:mm");
-  //     },
-  //   },
-  // },
+
   yaxis: {
     tooltip: {
       enabled: true,
@@ -293,15 +274,15 @@ var options = {
 
 const ForexChart = () => {
   return (
-    <div className="w-full min-h-[472px] max-h-[472px] border border-[#2A313C] rounded-[16px] p-[37px] mt-[308px]">
-      <div className="flex justify-between">
-        <h1 className="text-primary_gw text-xl font-semibold leading-[18px] tracking-[0.2px]">
+    <div className="w-full min-h-[472px] max-h-[472px] border border-[#2A313C] rounded-[16px] p-3 md:p-[37px] mt-10 md:mt-[308px]">
+      <div className="flex justify-between mb-4">
+        <h1 className="text-primary_gw text-sm md:text-xl font-semibold leading-[18px] tracking-[0.2px]">
           USD/EUR
         </h1>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild className="border-none outline-none">
-            <button className="flex justify-center gap-1 items-center bg-[#232B38] h-[49px] w-[203px]">
+            <button className="flex justify-center gap-1 items-center bg-[#232B38] h-8 md:h-[49px] w-fit px-3 md:w-[203px]">
               <span className="text-xs font-semibold leading-[18px] tracking-[0.4px] text-primary_gw">
                 Last 3 years
               </span>
@@ -319,33 +300,6 @@ const ForexChart = () => {
         type="candlestick"
         height={400}
       />
-      {/* <ResponsiveContainer height={350} className="h-[400px] w-full">
-        <BarChart
-          width={300}
-          height={300}
-          data={data}
-          margin={{
-            top: 20,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" stroke="#FAFAFA" />
-          <YAxis yAxisId="left" orientation="left" stroke="#FAFAFA" />
-          <YAxis
-            yAxisId="right"
-            orientation="right"
-            className="hidden"
-            stroke="#FAFAFA"
-          />
-          <Tooltip />
-          <Legend />
-          <Bar yAxisId="left" dataKey="pv" fill="#8884d8" />
-          <Bar yAxisId="right" dataKey="uv" fill="#82ca9d" />
-        </BarChart>
-      </ResponsiveContainer> */}
     </div>
   );
 };

@@ -4,7 +4,9 @@ import SidebarUi from "../layout-ui/SidebarUi";
 const MainSidebar = () => {
   return (
     <>
-      <SidebarUi />
+      <div className="hidden lg:block h-full">
+        <SidebarUi />
+      </div>
     </>
   );
 };

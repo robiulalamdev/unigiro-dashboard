@@ -6,7 +6,7 @@ import { iDownArrow } from "@/utils/icons";
 
 const SelectTimePeriod = () => {
   return (
-    <div className="flex justify-center items-center gap-[33px] mt-6">
+    <div className="flex justify-center items-center flex-wrap gap-[33px] mt-6">
       <h1 className="text-primary_gw text-[18px] font-extrabold leading-[24px] tracking-[0.2px]">
         Select time period:
       </h1>

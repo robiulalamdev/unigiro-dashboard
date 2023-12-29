@@ -7,7 +7,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import ValuationTable from "@/components/valuation-ui/ValuationTable";
 import { financial_overview_data } from "@/utils/chartData";
 import { iDownArrow, iFO2, iFOLogo1 } from "@/utils/icons";
@@ -21,7 +21,7 @@ const index = () => {
       <main className="mt-[39px]">
         <OverviewEC />
         <div>
-          <div className="flex justify-center items-center gap-[33px] mt-6">
+          <div className="flex justify-center items-center flex-wrap gap-[33px] mt-6">
             <h1 className="text-primary_gw text-[18px] font-extrabold leading-[24px] tracking-[0.2px]">
               Select time period:
             </h1>
@@ -233,8 +233,8 @@ const index = () => {
           </div>
         </div>
 
-        <div className="mt-[55px] grid grid-cols-2 gap-[63px]">
-          <div className="grid grid-cols-2 gap-[43px]">
+        <div className="mt-[55px] grid md:grid-cols-2 gap-6 md:gap-[63px]">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-[43px]">
             <div className="border-[4px] border-[#51C5B0] rounded-[16px] min-h-[180px] max-h-[180px] px-[23px] py-[17px]">
               <div className="flex justify-between items-center ">
                 <div className="flex flex-col gap-1">
@@ -361,15 +361,15 @@ const index = () => {
         "
           >
             <div className="flex justify-between items-center mb-[20px]">
-              <h1 className="text-primary_gw text-[18px] font-extrabold leading-[24px] tracking-[0.2px]">
+              <h1 className="text-primary_gw text-sm md:text-[18px] font-extrabold leading-[24px] tracking-[0.2px] break-all">
                 Comparables by Industry
               </h1>
-              <span className="text-[#A0AEC0] text-sm font-medium leading-[21px] tracking-[0.2px]">
+              <span className="text-[#A0AEC0] text-xs md:text-sm font-medium leading-[21px] tracking-[0.2px]">
                 View all
               </span>
             </div>
             <ScrollArea className="h-full max-h-[290px] ">
-              <div className="grid grid-cols-1 gap-[24px]">
+              <div className="grid grid-cols-1 gap-3 md:gap-[24px]">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 5, 6, 4, 5, 5, 5, 5, 5].map(() => (
                   <>
                     <div className="flex justify-between items-center">

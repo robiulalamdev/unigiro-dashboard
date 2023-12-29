@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollArea } from "../ui/scroll-area";
+import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 import {
   Table,
@@ -14,8 +14,8 @@ import {
 
 const PerformanceTable = () => {
   return (
-    <ScrollArea className="mt-[32px] h-[584px]">
-      <Table>
+    <ScrollArea className="mt-4 md:mt-[32px] h-[584px] w-full">
+      <Table className="overflow-x-auto">
         <TableHeader>
           <TableRow className="border-[#2A313C] hover:bg-main_bg cursor-pointer">
             <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
@@ -535,6 +535,7 @@ const PerformanceTable = () => {
           </TableRow>
         </TableBody>
       </Table>
+      <ScrollBar orientation="horizontal" />
     </ScrollArea>
   );
 };

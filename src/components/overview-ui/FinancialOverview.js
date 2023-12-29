@@ -27,12 +27,12 @@ import {
 
 const FinancialOverview = () => {
   return (
-    <div className="mt-[24px]">
+    <div className="mt-4 md:mt-[24px]">
       <h1 className="text-primary_gw text-[18px] font-extrabold leading-[24px] tracking-[0.2px]">
         Financial Overview
       </h1>
 
-      <div className="mt-[23px] grid grid-cols-4 gap-[36px]">
+      <div className="mt-3 md:mt-[23px] grid sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-[36px]">
         <div className="border-[4px] border-primary rounded-[16px] min-h-[178px] px-[23px] py-[17px]">
           <div className="flex justify-between items-center ">
             <div className="flex flex-col gap-1">
@@ -148,9 +148,9 @@ const FinancialOverview = () => {
         </div>
       </div>
 
-      <div className="flex justify-between gap-6 mt-[35px]">
+      <div className="flex flex-col md:flex-row justify-between gap-6 mt-[35px]">
         <div
-          className="min-w-[317px] h-full bg-[#1A202C] border border-[#2A313C] rounded-[16px] pt-[49px] pb-[15px] px-[17px]
+          className="md:min-w-[317px] h-full bg-[#1A202C] border border-[#2A313C] rounded-[16px] pt-[49px] pb-[15px] px-[17px]
         grid grid-cols-1 gap-6"
         >
           {[1, 2, 3, 4, 5, 6, 7, 8].map(() => (
@@ -180,9 +180,9 @@ const FinancialOverview = () => {
           ))}
         </div>
         <div className="flex-grow w-full h-full grid grid-cols-1 gap-[26px]">
-          <div className="w-full min-h-[296px] max-h-[296px] bg-[#1A202C] border border-[#2A313C] rounded-[16px]">
-            <div className="flex justify-between px-[36px] pt-[6px]">
-              <h1 className="text-primary_gw text-xl font-semibold leading-[18px] tracking-[0.2px]">
+          <div className="w-full min-h-[296px] md:max-h-[296px] bg-[#1A202C] border border-[#2A313C] rounded-[16px]">
+            <div className="flex justify-between px-3 md:px-[36px] pt-[6px]">
+              <h1 className="text-primary_gw text-sm md:text-xl font-semibold leading-[18px] tracking-[0.2px]">
                 Assets / Liabilities
               </h1>
 
@@ -225,9 +225,9 @@ const FinancialOverview = () => {
               </BarChart>
             </ResponsiveContainer>
           </div>
-          <div className="w-full min-h-[296px] max-h-[296px] bg-[#1A202C] border border-[#2A313C] rounded-[16px]">
-            <div className="flex justify-between px-[36px] pt-[6px]">
-              <h1 className="text-primary_gw text-xl font-semibold leading-[18px] tracking-[0.2px]">
+          <div className="w-full min-h-[296px] md:max-h-[296px] bg-[#1A202C] border border-[#2A313C] rounded-[16px]">
+            <div className="flex justify-between px-3 md:px-[36px] pt-[6px]">
+              <h1 className="text-primary_gw text-sm md:text-xl font-semibold leading-[18px] tracking-[0.2px]">
                 Cash Flow Statement
               </h1>
 
