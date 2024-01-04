@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/headers/Header";
 import OverviewEC from "@/components/overview-ui/OverviewEC";
 import PerformanceTable from "@/components/performance-ui/PerformanceTable";

@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/headers/Header";
 import OverviewEC from "@/components/overview-ui/OverviewEC";
 import { Button } from "@/components/ui/button";
@@ -15,7 +17,7 @@ import moment from "moment";
 import React, { useRef, useState } from "react";
 import { Bar, BarChart, Cell, ResponsiveContainer } from "recharts";
 
-const index = () => {
+const ValuationPage = () => {
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
   const fromDateRef = useRef();
@@ -426,4 +428,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default ValuationPage;
