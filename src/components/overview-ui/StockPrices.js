@@ -1,6 +1,6 @@
 import { overview_stock_prices } from "@/utils/chartData";
 import { iDownArrow, spLabel } from "@/utils/icons";
-import React, { PureComponent } from "react";
+import React, { PureComponent, useState } from "react";
 import {
   LineChart,
   Line,
@@ -16,14 +16,21 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+const items = [
+  "Last 1 Day",
+  "Last 30 Days",
+  "Last 90 Days",
+  "Last 1 Years",
+  "Last 3 Years",
+  "Last 5 Years",
+];
+
 const StockPrices = () => {
+  const [selectTimePeriod, setSelectTimePeriod] = useState("Last 3 years");
   return (
     <div>
       <div className="border max-h-fit min-h-[472px] w-full mt-[29px] rounded-[16px] border-[#2A313C] py-[18px] md:py-[42px] px-4 md:px-[37px]">
@@ -98,13 +105,21 @@ const StockPrices = () => {
             <DropdownMenuTrigger asChild className="border-none outline-none">
               <button className="flex justify-center gap-1 items-center h-10 px-2 md:h-[49px] bg-[#232B38] rounded-[8px] w-fit md:w-[203px]">
                 <span className="text-xs font-semibold leading-[18px] tracking-[0.4px] text-primary_gw">
-                  Last 3 years
+                  {selectTimePeriod}
                 </span>
                 <div className="size-4 text-[#718096]">{iDownArrow}</div>
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[203px] bg-sidebar_bg border border-[#232B38] text-white">
-              <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
+              {items.map((item, index) => (
+                <DropdownMenuRadioItem
+                  onClick={() => setSelectTimePeriod(item)}
+                  key={index}
+                  value={item}
+                >
+                  {item}
+                </DropdownMenuRadioItem>
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
