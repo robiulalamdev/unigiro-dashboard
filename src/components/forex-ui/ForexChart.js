@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -270,7 +270,17 @@ var options = {
   },
 };
 
+const items = [
+  "Last 1 Day",
+  "Last 30 Days",
+  "Last 90 Days",
+  "Last 1 Years",
+  "Last 3 Years",
+  "Last 5 Years",
+];
+
 const ForexChart = () => {
+  const [selectTime, setSelectTime] = useState("Last 30 Days");
   return (
     <div className="w-full min-h-[472px] max-h-[472px] border border-[#2A313C] rounded-[16px] p-3 md:p-[37px] mt-10 md:mt-[308px]">
       <div className="flex justify-between mb-4">
@@ -282,13 +292,21 @@ const ForexChart = () => {
           <DropdownMenuTrigger asChild className="border-none outline-none">
             <button className="flex justify-center gap-1 items-center bg-[#232B38] h-8 md:h-[49px] w-fit px-3 md:w-[203px]">
               <span className="text-xs font-semibold leading-[18px] tracking-[0.4px] text-primary_gw">
-                Last 3 years
+                {selectTime}
               </span>
               <div className="size-4 text-white">{iDownArrow}</div>
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-[203px] bg-sidebar_bg border border-[#232B38] text-white">
-            <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
+            {items.map((item, index) => (
+              <DropdownMenuRadioItem
+                onClick={() => setSelectTime(item)}
+                key={index}
+                value={item}
+              >
+                {item}
+              </DropdownMenuRadioItem>
+            ))}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

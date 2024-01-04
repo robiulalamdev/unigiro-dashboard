@@ -11,7 +11,7 @@ const ForexChart = dynamic(() => import("@/components/forex-ui/ForexChart"), {
 const ForexPage = () => {
   return (
     <div>
-      <Header label="Indicators" />
+      <Header label="Forex" />
       <main className="mt-5 md:mt-[39px]">
         <OverviewEC />
         <div className="mt-10 md:mt-[102px]">

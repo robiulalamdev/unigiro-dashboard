@@ -9,8 +9,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { iDownArrow } from "@/utils/icons";
+import moment from "moment";
 import dynamic from "next/dynamic";
-import React from "react";
+import React, { useRef, useState } from "react";
 
 const PerformanceChart = dynamic(
   () => import("@/components/performance-ui/PerformanceChart"),
@@ -20,6 +21,10 @@ const PerformanceChart = dynamic(
 );
 
 const OverViewPage = () => {
+  const [fromDate, setFromDate] = useState("");
+  const [toDate, setToDate] = useState("");
+  const fromDateRef = useRef();
+  const toDateRef = useRef();
   return (
     <div>
       <Header label="Performance" />
@@ -48,10 +53,13 @@ const OverViewPage = () => {
             <Popover>
               <PopoverTrigger asChild>
                 <Button
+                  ref={fromDateRef}
                   className={`bg-[#232B38] border-none outline-none text-primary_gw flex gap-1 items-center hover:bg-[#232B38]`}
                 >
                   <span className="text-xs font-semibold leading-[18px] tracking-[0.4px]">
-                    DD / MM / YYYY
+                    {fromDate
+                      ? moment(fromDate).format("DD / MM / YYYY")
+                      : "DD / MM / YYYY"}
                   </span>
                   <div className="w-4 text-[#718096]">{iDownArrow}</div>
                   <svg
@@ -123,6 +131,11 @@ const OverViewPage = () => {
               <PopoverContent className="w-auto p-0" align="start">
                 <Calendar
                   mode="single"
+                  selected={fromDate}
+                  onSelect={(e) => {
+                    setFromDate(e);
+                    fromDateRef.current?.click();
+                  }}
                   disabled={(date) =>
                     date > new Date() || date < new Date("1900-01-01")
                   }
@@ -148,10 +161,13 @@ const OverViewPage = () => {
             <Popover>
               <PopoverTrigger asChild>
                 <Button
+                  ref={toDateRef}
                   className={`bg-[#232B38] border-none outline-none text-primary_gw flex gap-1 items-center hover:bg-[#232B38]`}
                 >
                   <span className="text-xs font-semibold leading-[18px] tracking-[0.4px]">
-                    DD / MM / YYYY
+                    {toDate
+                      ? moment(toDate).format("DD / MM / YYYY")
+                      : "DD / MM / YYYY"}
                   </span>
                   <div className="w-4 text-[#718096]">{iDownArrow}</div>
                   <svg
@@ -223,6 +239,11 @@ const OverViewPage = () => {
               <PopoverContent className="w-auto p-0" align="start">
                 <Calendar
                   mode="single"
+                  selected={fromDate}
+                  onSelect={(e) => {
+                    setToDate(e);
+                    toDateRef?.current?.click();
+                  }}
                   disabled={(date) =>
                     date > new Date() || date < new Date("1900-01-01")
                   }

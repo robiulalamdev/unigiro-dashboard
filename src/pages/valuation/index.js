@@ -11,10 +11,15 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import ValuationTable from "@/components/valuation-ui/ValuationTable";
 import { financial_overview_data } from "@/utils/chartData";
 import { iDownArrow, iFO2, iFOLogo1 } from "@/utils/icons";
-import React from "react";
+import moment from "moment";
+import React, { useRef, useState } from "react";
 import { Bar, BarChart, Cell, ResponsiveContainer } from "recharts";
 
 const index = () => {
+  const [fromDate, setFromDate] = useState("");
+  const [toDate, setToDate] = useState("");
+  const fromDateRef = useRef();
+  const toDateRef = useRef();
   return (
     <div>
       <Header label="Valuation" />
@@ -43,10 +48,13 @@ const index = () => {
             <Popover>
               <PopoverTrigger asChild>
                 <Button
+                  ref={fromDateRef}
                   className={`bg-[#232B38] border-none outline-none text-primary_gw flex gap-1 items-center hover:bg-[#232B38]`}
                 >
                   <span className="text-xs font-semibold leading-[18px] tracking-[0.4px]">
-                    DD / MM / YYYY
+                    {fromDate
+                      ? moment(fromDate).format("DD / MM / YYYY")
+                      : "DD / MM / YYYY"}
                   </span>
                   <div className="w-4 text-[#718096]">{iDownArrow}</div>
                   <svg
@@ -118,6 +126,11 @@ const index = () => {
               <PopoverContent className="w-auto p-0" align="start">
                 <Calendar
                   mode="single"
+                  selected={fromDate}
+                  onSelect={(e) => {
+                    setFromDate(e);
+                    fromDateRef.current?.click();
+                  }}
                   disabled={(date) =>
                     date > new Date() || date < new Date("1900-01-01")
                   }
@@ -143,10 +156,13 @@ const index = () => {
             <Popover>
               <PopoverTrigger asChild>
                 <Button
+                  ref={toDateRef}
                   className={`bg-[#232B38] border-none outline-none text-primary_gw flex gap-1 items-center hover:bg-[#232B38]`}
                 >
                   <span className="text-xs font-semibold leading-[18px] tracking-[0.4px]">
-                    DD / MM / YYYY
+                    {toDate
+                      ? moment(toDate).format("DD / MM / YYYY")
+                      : "DD / MM / YYYY"}
                   </span>
                   <div className="w-4 text-[#718096]">{iDownArrow}</div>
                   <svg
@@ -218,6 +234,11 @@ const index = () => {
               <PopoverContent className="w-auto p-0" align="start">
                 <Calendar
                   mode="single"
+                  selected={fromDate}
+                  onSelect={(e) => {
+                    setToDate(e);
+                    toDateRef?.current?.click();
+                  }}
                   disabled={(date) =>
                     date > new Date() || date < new Date("1900-01-01")
                   }

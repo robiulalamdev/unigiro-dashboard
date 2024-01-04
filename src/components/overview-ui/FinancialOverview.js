@@ -3,7 +3,7 @@ import {
   financial_overview_data_second,
 } from "@/utils/chartData";
 import { iDownArrow, iFO1, iFO2, iFOLogo1 } from "@/utils/icons";
-import React from "react";
+import React, { useState } from "react";
 import {
   Bar,
   BarChart,
@@ -25,7 +25,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+const items = [
+  "Last 1 Day",
+  "Last 30 Days",
+  "Last 90 Days",
+  "Last 1 Years",
+  "Last 3 Years",
+  "Last 5 Years",
+];
+
 const FinancialOverview = () => {
+  const [selectLiabilitiesTime, setSelectLiabilitiesTime] = useState("");
+  const [selectStatementTime, setSelectStatementTime] = useState("");
   return (
     <div className="mt-4 md:mt-[24px]">
       <h1 className="text-primary_gw text-[18px] font-extrabold leading-[24px] tracking-[0.2px]">
@@ -193,20 +204,28 @@ const FinancialOverview = () => {
                 >
                   <button className="flex justify-center gap-1 items-center">
                     <span className="text-xs font-semibold leading-[18px] tracking-[0.4px] text-primary_gw">
-                      Select the Value
+                      {selectLiabilitiesTime
+                        ? selectLiabilitiesTime
+                        : "Select the Value"}
                     </span>
                     <div className="size-4 text-white">{iDownArrow}</div>
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-[203px] bg-sidebar_bg border border-[#232B38] text-white">
-                  <DropdownMenuRadioItem value="right">
-                    Right
-                  </DropdownMenuRadioItem>
+                  {items.map((item, index) => (
+                    <DropdownMenuRadioItem
+                      onClick={() => setSelectLiabilitiesTime(item)}
+                      key={index}
+                      value={item}
+                    >
+                      {item}
+                    </DropdownMenuRadioItem>
+                  ))}
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
             <ResponsiveContainer
-              height={255}
+              height={240}
               className="w-full h-full mt-[23px] px-[23px]"
             >
               <BarChart width={29} data={financial_overview_data_second}>
@@ -238,20 +257,28 @@ const FinancialOverview = () => {
                 >
                   <button className="flex justify-center gap-1 items-center">
                     <span className="text-xs font-semibold leading-[18px] tracking-[0.4px] text-primary_gw">
-                      Select the Value
+                      {selectStatementTime
+                        ? selectStatementTime
+                        : "Select the Value"}
                     </span>
                     <div className="size-4 text-white">{iDownArrow}</div>
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-[203px] bg-sidebar_bg border border-[#232B38] text-white">
-                  <DropdownMenuRadioItem value="right">
-                    Right
-                  </DropdownMenuRadioItem>
+                  {items.map((item, index) => (
+                    <DropdownMenuRadioItem
+                      onClick={() => setSelectStatementTime(item)}
+                      key={index}
+                      value={item}
+                    >
+                      {item}
+                    </DropdownMenuRadioItem>
+                  ))}
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
             <ResponsiveContainer
-              height={255}
+              height={240}
               className="w-full h-full mt-[23px] px-[23px]"
             >
               <BarChart width={29} data={financial_overview_data_second}>
