@@ -2,8 +2,9 @@ import React, { useRef, useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Calendar } from "../ui/calendar";
 import { Button } from "../ui/button";
-import { iDownArrow } from "@/utils/icons";
+import { date1, iDownArrow } from "@/utils/icons";
 import moment from "moment";
+import ReactDatePicker from "react-datepicker";
 
 const SelectTimePeriod = () => {
   const [fromDate, setFromDate] = useState("");
@@ -31,35 +32,17 @@ const SelectTimePeriod = () => {
           FROM:
         </span>
       </div>
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button
-            className={`bg-[#232B38] border-none outline-none text-primary_gw flex gap-1 items-center hover:bg-[#232B38]`}
-            ref={fromDateRef}
-          >
-            <span className="text-xs font-semibold leading-[18px] tracking-[0.4px]">
-              {fromDate
-                ? moment(fromDate).format("DD / MM / YYYY")
-                : "DD / MM / YYYY"}
-            </span>
-            <div className="w-4 text-[#718096]">{iDownArrow}</div>
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
-          <Calendar
-            mode="single"
-            selected={fromDate}
-            onSelect={(e) => {
-              setFromDate(e);
-              fromDateRef.current?.click();
-            }}
-            disabled={(date) =>
-              date > new Date() || date < new Date("1900-01-01")
-            }
-            initialFocus
-          />
-        </PopoverContent>
-      </Popover>
+      <ReactDatePicker
+        className="text-xs font-semibold leading-[18px] h-[40px] text-center rounded-md tracking-[0.4px] bg-[#232B38] border-none outline-none text-primary_gw placeholder:text-primary_gw flex gap-1 items-center hover:bg-[#232B38]"
+        selected={fromDate}
+        onChange={(date) => {
+          setFromDate(date);
+        }}
+        showYearDropdown
+        placeholderText="DD / MM / YYYY"
+        showIcon
+        icon={date1}
+      />
       <div className="flex items-center gap-2">
         <svg
           width="12"
@@ -75,34 +58,17 @@ const SelectTimePeriod = () => {
           To:
         </span>
       </div>
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button
-            className={`bg-[#232B38] border-none outline-none text-primary_gw flex gap-1 items-center hover:bg-[#232B38]`}
-          >
-            <span className="text-xs font-semibold leading-[18px] tracking-[0.4px]">
-              {toDate
-                ? moment(toDate).format("DD / MM / YYYY")
-                : "DD / MM / YYYY"}
-            </span>
-            <div className="w-4 text-[#718096]">{iDownArrow}</div>
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
-          <Calendar
-            mode="single"
-            selected={fromDate}
-            onSelect={(e) => {
-              setToDate(e);
-              toDateRef?.current?.click();
-            }}
-            disabled={(date) =>
-              date > new Date() || date < new Date("1900-01-01")
-            }
-            initialFocus
-          />
-        </PopoverContent>
-      </Popover>
+      <ReactDatePicker
+        className="text-xs font-semibold leading-[18px] h-[40px] text-center rounded-md tracking-[0.4px] bg-[#232B38] border-none outline-none text-primary_gw placeholder:text-primary_gw flex gap-1 items-center hover:bg-[#232B38]"
+        selected={toDate}
+        onChange={(date) => {
+          setToDate(date);
+        }}
+        showYearDropdown
+        placeholderText="DD / MM / YYYY"
+        showIcon
+        icon={date1}
+      />
     </div>
   );
 };

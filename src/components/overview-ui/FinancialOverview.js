@@ -25,13 +25,29 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const items = [
-  "Last 1 Day",
-  "Last 30 Days",
-  "Last 90 Days",
-  "Last 1 Years",
-  "Last 3 Years",
-  "Last 5 Years",
+// const items = [
+//   "Last 1 Day",
+//   "Last 30 Days",
+//   "Last 90 Days",
+//   "Last 1 Years",
+//   "Last 3 Years",
+//   "Last 5 Years",
+// ];
+
+const liabilities = [
+  "total assets",
+  "total liabilities",
+  "total current assets",
+  "total current liabilities",
+  "shareholders equity",
+  "total debts",
+  "total investment",
+];
+
+const statements = [
+  "cash flow operating activities",
+  "cash flow financing activities",
+  "cash flow investment activities",
 ];
 
 const FinancialOverview = () => {
@@ -212,7 +228,7 @@ const FinancialOverview = () => {
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-[203px] bg-sidebar_bg border border-[#232B38] text-white">
-                  {items.map((item, index) => (
+                  {liabilities.map((item, index) => (
                     <DropdownMenuRadioItem
                       onClick={() => setSelectLiabilitiesTime(item)}
                       key={index}
@@ -264,8 +280,8 @@ const FinancialOverview = () => {
                     <div className="size-4 text-white">{iDownArrow}</div>
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[203px] bg-sidebar_bg border border-[#232B38] text-white">
-                  {items.map((item, index) => (
+                <DropdownMenuContent className="min-w-[203px] bg-sidebar_bg border border-[#232B38] text-white">
+                  {statements.map((item, index) => (
                     <DropdownMenuRadioItem
                       onClick={() => setSelectStatementTime(item)}
                       key={index}

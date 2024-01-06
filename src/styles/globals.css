@@ -93,3 +93,9 @@ body {
 .performance_avarage_bg {
   fill: linear-gradient(301deg, #121623 7.44%, #272935 90.09%);
 }
+
+.react-datepicker__input-container {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  align-items: center !important;
+}
