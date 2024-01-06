@@ -15,25 +15,25 @@ import {
 const PerformanceTable = () => {
   return (
     <ScrollArea className="mt-4 md:mt-[32px] h-[584px] w-full">
-      <Table className="overflow-x-auto">
+      <Table className="overflow-x-auto w-full min-w-[700px]">
         <TableHeader>
           <TableRow className="border-[#2A313C] hover:bg-main_bg cursor-pointer">
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
+            <TableHead className="!text-xs md:text-sm text-nowrap text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
               Selected company
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
+            <TableHead className="!text-xs md:text-sm text-nowrap text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
               Return %
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
+            <TableHead className="!text-xs md:text-sm text-nowrap text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
               Return 1 week{" "}
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
+            <TableHead className="!text-xs md:text-sm text-nowrap text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
               Return 1 month
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
+            <TableHead className="!text-xs md:text-sm text-nowrap text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
               Return 3 months
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
+            <TableHead className="!text-xs md:text-sm text-nowrap text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0">
               {" "}
               Return 6 months
             </TableHead>

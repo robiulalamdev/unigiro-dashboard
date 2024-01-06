@@ -16,46 +16,46 @@ import { iCompare } from "@/utils/icons";
 const ValuationTable = () => {
   return (
     <ScrollArea className="mt-[32px] h-[584px]">
-      <Table>
+      <Table className="w-full min-w-[900px]">
         <TableHeader>
           <TableRow className="border-[#2A313C] hover:bg-main_bg cursor-pointer">
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="text-xs flex items-center gap-1">
+            <TableHead className="!text-xs text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+              <div className="!text-xs flex items-center gap-1">
                 Name/Business {iCompare}
               </div>
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="text-xs flex items-center gap-1">
+            <TableHead className="!text-xs text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+              <div className="!text-xs flex items-center gap-1">
                 EV/Sales {iCompare}
               </div>
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="text-xs flex items-center gap-1">
+            <TableHead className="!text-xs text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+              <div className="!text-xs flex items-center gap-1">
                 EV/EBITDA {iCompare}
               </div>
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="text-xs flex items-center gap-1">
+            <TableHead className="!text-xs text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+              <div className="!text-xs flex items-center gap-1">
                 EV/EBIT {iCompare}
               </div>
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="text-xs flex items-center gap-1">
+            <TableHead className="!text-xs text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+              <div className="!text-xs flex items-center gap-1">
                 P/Sales {iCompare}
               </div>
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="text-xs flex items-center gap-1">
+            <TableHead className="!text-xs text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+              <div className="!text-xs flex items-center gap-1">
                 P/Earnings {iCompare}
               </div>
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="text-xs flex items-center gap-1">
+            <TableHead className="!text-xs text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+              <div className="!text-xs flex items-center gap-1">
                 P/BookValue {iCompare}
               </div>
             </TableHead>
-            <TableHead className="text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
-              <div className="text-xs flex items-center gap-1">Actions</div>
+            <TableHead className="!text-xs text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+              <div className="!text-xs flex items-center gap-1">Actions</div>
             </TableHead>
           </TableRow>
         </TableHeader>

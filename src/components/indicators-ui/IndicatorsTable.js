@@ -16,24 +16,24 @@ import { iCompare } from "@/utils/icons";
 const IndicatorsTable = () => {
   return (
     <ScrollArea className="mt-[32px] h-[584px]">
-      <Table>
+      <Table className="w-full min-w-[600px]">
         <TableHeader>
           <TableRow className="border-[#2A313C] hover:bg-main_bg cursor-pointer">
-            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="!text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               <div className="flex items-center gap-1">
                 Indicators {iCompare}
               </div>
             </TableHead>
-            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="!text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               Company 1
             </TableHead>
-            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="!text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               Company 2
             </TableHead>
-            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="!text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               Company 3
             </TableHead>
-            <TableHead className="text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
+            <TableHead className="!text-xs md:text-sm text-[#A0AEC0] font-extrabold leading-[24px] tracking-[0.2px] px-0 ">
               Company 4
             </TableHead>
           </TableRow>
