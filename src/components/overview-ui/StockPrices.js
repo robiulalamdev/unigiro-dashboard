@@ -29,7 +29,7 @@ const items = [
   "Last 5 Years",
 ];
 
-const StockPrices = () => {
+const StockPrices = ({ data }) => {
   const [selectTimePeriod, setSelectTimePeriod] = useState("Last 3 years");
   return (
     <div>
@@ -127,7 +127,8 @@ const StockPrices = () => {
           height={380}
           className="w-full md:max-h-full mt-[48px]"
         >
-          <LineChart className="h-full w-full" data={overview_stock_prices}>
+          {/* <LineChart className="h-full w-full" data={overview_stock_prices}> */}
+          <LineChart className="h-full w-full" data={data?.stocksPrices}>
             {/* <CartesianGrid strokeDasharray="3 3" /> */}
             <XAxis dataKey="name" />
             <YAxis />

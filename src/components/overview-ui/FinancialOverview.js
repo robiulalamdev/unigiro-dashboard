@@ -50,7 +50,7 @@ const statements = [
   "cash flow investment activities",
 ];
 
-const FinancialOverview = () => {
+const FinancialOverview = ({ data }) => {
   const [selectLiabilitiesTime, setSelectLiabilitiesTime] = useState("");
   const [selectStatementTime, setSelectStatementTime] = useState("");
   return (
@@ -67,15 +67,19 @@ const FinancialOverview = () => {
                 P/E RATIO{" "}
               </span>
               <h1 className="text-primary_gw text-xl leading-[27px] font-extrabold tracking-[0.2px]">
-                $1,980.00
+                ${data?.financialOverview[0]?.value}
               </h1>
             </div>
             {iFO1}
           </div>
           <ResponsiveContainer height={170} className="w-full mt-[23px]">
-            <BarChart width={150} height={40} data={financial_overview_data}>
+            <BarChart
+              width={150}
+              height={40}
+              data={data?.financialOverview[0]?.data}
+            >
               <Bar dataKey="uv">
-                {financial_overview_data.map((entry, index) => (
+                {data?.financialOverview[0]?.data?.map((entry, index) => (
                   <Cell
                     cursor="pointer"
                     fill={entry.fill}
@@ -96,15 +100,19 @@ const FinancialOverview = () => {
                 <div className="text-[#718096] w-5">{iDownArrow}</div>
               </div>
               <h1 className="text-primary_gw text-xl leading-[27px] font-extrabold tracking-[0.2px]">
-                $2,456.89
+                ${data?.financialOverview[1]?.value}
               </h1>
             </div>
             {iFO2}
           </div>
           <ResponsiveContainer height={170} className="w-full mt-[23px]">
-            <BarChart width={150} height={40} data={financial_overview_data}>
+            <BarChart
+              width={150}
+              height={40}
+              data={data?.financialOverview[1]?.data}
+            >
               <Bar dataKey="uv">
-                {financial_overview_data.map((entry, index) => (
+                {data?.financialOverview[1]?.data?.map((entry, index) => (
                   <Cell
                     cursor="pointer"
                     fill={entry.fill}
@@ -125,15 +133,19 @@ const FinancialOverview = () => {
                 <div className="text-[#718096] w-5">{iDownArrow}</div>
               </div>
               <h1 className="text-primary_gw text-xl leading-[27px] font-extrabold tracking-[0.2px]">
-                $2,456.89
+                ${data?.financialOverview[2]?.value}
               </h1>
             </div>
             {iFO2}
           </div>
           <ResponsiveContainer height={170} className="w-full mt-[23px]">
-            <BarChart width={150} height={40} data={financial_overview_data}>
+            <BarChart
+              width={150}
+              height={40}
+              data={data?.financialOverview[2]?.data}
+            >
               <Bar dataKey="uv">
-                {financial_overview_data.map((entry, index) => (
+                {data?.financialOverview[2]?.data?.map((entry, index) => (
                   <Cell
                     cursor="pointer"
                     fill={entry.fill}
@@ -154,15 +166,19 @@ const FinancialOverview = () => {
                 <div className="text-[#718096] w-5">{iDownArrow}</div>
               </div>
               <h1 className="text-primary_gw text-xl leading-[27px] font-extrabold tracking-[0.2px]">
-                $2,456.89
+                ${data?.financialOverview[3]?.value}
               </h1>
             </div>
             {iFO2}
           </div>
           <ResponsiveContainer height={170} className="w-full mt-[23px]">
-            <BarChart width={150} height={40} data={financial_overview_data}>
+            <BarChart
+              width={150}
+              height={40}
+              data={data?.financialOverview[3]?.data}
+            >
               <Bar dataKey="uv">
-                {financial_overview_data.map((entry, index) => (
+                {data?.financialOverview[3]?.data?.map((entry, index) => (
                   <Cell
                     cursor="pointer"
                     fill={entry.fill}

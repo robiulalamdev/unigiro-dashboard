@@ -1,7 +1,26 @@
 import { iOverivewECDownBtn, iSearch } from "@/utils/icons";
-import React from "react";
+import React, { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
 
-const OverviewEC = () => {
+const OverviewEC = ({ filters, handleFilter }) => {
+  const [exchange, setExchange] = useState("");
+  const [company, setCompany] = useState("");
+  const [companies, setCompanies] = useState([]);
+
+  const handleFilterExchange = (data) => {
+    setExchange(data?.exchange);
+    setCompanies([data]);
+    setCompany("");
+  };
+  const handleFilterCompany = (data) => {
+    setCompany(data?.company);
+    handleFilter(data);
+  };
   return (
     <div className="grid md:grid-cols-2 gap-[12px] md:gap-[22px]">
       <div className="bg-[#1A202C] h-[101px] rounded-[16px] border border-[#2A323C] pb-[28px]">
@@ -13,10 +32,26 @@ const OverviewEC = () => {
             <div className="size-[23px]">{iSearch}</div>
             <input
               type="search"
+              value={exchange}
               className="bg-main_bg border-none focus:border-none focus:outline-none px-4 w-full h-full"
             />
           </div>
-          <div>{iOverivewECDownBtn}</div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <div>{iOverivewECDownBtn}</div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[203px] bg-sidebar_bg border border-[#232B38] text-white">
+              {filters.map((item, index) => (
+                <DropdownMenuRadioItem
+                  onClick={() => handleFilterExchange(item)}
+                  key={index}
+                  value={item?.exchange}
+                >
+                  {item?.exchange}
+                </DropdownMenuRadioItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
       <div className="bg-[#1A202C] h-[101px] rounded-[16px] border border-[#2A323C] pb-[28px]">
@@ -28,10 +63,26 @@ const OverviewEC = () => {
             <div className="size-[23px]">{iSearch}</div>
             <input
               type="search"
+              value={company}
               className="bg-main_bg border-none focus:border-none focus:outline-none px-4 w-full h-full"
             />
           </div>
-          <div>{iOverivewECDownBtn}</div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <div>{iOverivewECDownBtn}</div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[203px] bg-sidebar_bg border border-[#232B38] text-white">
+              {companies.map((item, index) => (
+                <DropdownMenuRadioItem
+                  onClick={() => handleFilterCompany(item)}
+                  key={index}
+                  value={item?.company}
+                >
+                  {item?.company}
+                </DropdownMenuRadioItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </div>
