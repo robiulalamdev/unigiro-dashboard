@@ -53,6 +53,7 @@ const statements = [
 const FinancialOverview = ({ data }) => {
   const [selectLiabilitiesTime, setSelectLiabilitiesTime] = useState("");
   const [selectStatementTime, setSelectStatementTime] = useState("");
+
   return (
     <div className="mt-4 md:mt-[24px]">
       <h1 className="text-primary_gw text-[18px] font-extrabold leading-[24px] tracking-[0.2px]">
@@ -67,7 +68,7 @@ const FinancialOverview = ({ data }) => {
                 P/E RATIO{" "}
               </span>
               <h1 className="text-primary_gw text-xl leading-[27px] font-extrabold tracking-[0.2px]">
-                ${data?.financialOverview[0]?.value}
+                ${data?.financialoverview[0]?.value}
               </h1>
             </div>
             {iFO1}
@@ -76,10 +77,10 @@ const FinancialOverview = ({ data }) => {
             <BarChart
               width={150}
               height={40}
-              data={data?.financialOverview[0]?.data}
+              data={data?.financialoverview[0]?.data}
             >
               <Bar dataKey="uv">
-                {data?.financialOverview[0]?.data?.map((entry, index) => (
+                {data?.financialoverview[0]?.data?.map((entry, index) => (
                   <Cell
                     cursor="pointer"
                     fill={entry.fill}
@@ -100,7 +101,7 @@ const FinancialOverview = ({ data }) => {
                 <div className="text-[#718096] w-5">{iDownArrow}</div>
               </div>
               <h1 className="text-primary_gw text-xl leading-[27px] font-extrabold tracking-[0.2px]">
-                ${data?.financialOverview[1]?.value}
+                ${data?.financialoverview[1]?.value}
               </h1>
             </div>
             {iFO2}
@@ -109,10 +110,10 @@ const FinancialOverview = ({ data }) => {
             <BarChart
               width={150}
               height={40}
-              data={data?.financialOverview[1]?.data}
+              data={data?.financialoverview[1]?.data}
             >
               <Bar dataKey="uv">
-                {data?.financialOverview[1]?.data?.map((entry, index) => (
+                {data?.financialoverview[1]?.data?.map((entry, index) => (
                   <Cell
                     cursor="pointer"
                     fill={entry.fill}
@@ -133,7 +134,7 @@ const FinancialOverview = ({ data }) => {
                 <div className="text-[#718096] w-5">{iDownArrow}</div>
               </div>
               <h1 className="text-primary_gw text-xl leading-[27px] font-extrabold tracking-[0.2px]">
-                ${data?.financialOverview[2]?.value}
+                ${data?.financialoverview[2]?.value}
               </h1>
             </div>
             {iFO2}
@@ -142,10 +143,10 @@ const FinancialOverview = ({ data }) => {
             <BarChart
               width={150}
               height={40}
-              data={data?.financialOverview[2]?.data}
+              data={data?.financialoverview[2]?.data}
             >
               <Bar dataKey="uv">
-                {data?.financialOverview[2]?.data?.map((entry, index) => (
+                {data?.financialoverview[2]?.data?.map((entry, index) => (
                   <Cell
                     cursor="pointer"
                     fill={entry.fill}
@@ -166,7 +167,7 @@ const FinancialOverview = ({ data }) => {
                 <div className="text-[#718096] w-5">{iDownArrow}</div>
               </div>
               <h1 className="text-primary_gw text-xl leading-[27px] font-extrabold tracking-[0.2px]">
-                ${data?.financialOverview[3]?.value}
+                ${data?.financialoverview[3]?.value}
               </h1>
             </div>
             {iFO2}
@@ -175,10 +176,10 @@ const FinancialOverview = ({ data }) => {
             <BarChart
               width={150}
               height={40}
-              data={data?.financialOverview[3]?.data}
+              data={data?.financialoverview[3]?.data}
             >
               <Bar dataKey="uv">
-                {data?.financialOverview[3]?.data?.map((entry, index) => (
+                {data?.financialoverview[3]?.data?.map((entry, index) => (
                   <Cell
                     cursor="pointer"
                     fill={entry.fill}

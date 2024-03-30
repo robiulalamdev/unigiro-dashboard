@@ -128,7 +128,7 @@ const StockPrices = ({ data }) => {
           className="w-full md:max-h-full mt-[48px]"
         >
           {/* <LineChart className="h-full w-full" data={overview_stock_prices}> */}
-          <LineChart className="h-full w-full" data={data?.stocksPrices}>
+          <LineChart className="h-full w-full" data={data?.stocksprices}>
             {/* <CartesianGrid strokeDasharray="3 3" /> */}
             <XAxis dataKey="name" />
             <YAxis />
